@@ -57,3 +57,31 @@ output "my_set" {
 output "my_list" {
   value = var.my_list[0]
 }
+
+# More!
+
+variable "list_obj" {
+  type = list(object({
+    name       = string
+    start_port = number
+    end_port   = number
+    tags = map(object({
+      key1 = string
+    }))
+  }))
+
+  default = [{
+    end_port   = 1
+    name       = "name_value"
+    start_port = 1
+    tags = {
+      "key" = {
+        key1 = "key1_value"
+      }
+    }
+  }]
+}
+
+output "list_obj" {
+  value = var.list_obj
+}

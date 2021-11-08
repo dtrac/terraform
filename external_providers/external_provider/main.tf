@@ -9,5 +9,9 @@ data "external" "example" {
 }
 
 output "result" {
+    value = data.external.example.result
+}
+
+output "message" {
     value = data.external.example.result["Message"]
 }

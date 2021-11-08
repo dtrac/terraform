@@ -32,7 +32,7 @@ variable "complex_obj" {
       tags = {
         "key" = "value"
       }
-    }
+    }   
     "rg04" = {
       location = "ukwest"
       name     = "rg04"
